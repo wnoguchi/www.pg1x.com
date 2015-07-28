@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<title>現金計数</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="">
+<style type="text/css">
+#y10000,
+#y5000,
+#y1000,
+#y500,
+#y100,
+#y50,
+#y10,
+#y5,
+#y1 {
+  text-align: right;
+}
+#calcResult {
+  font-size: 2em;
+  text-align: right;
+}
+</style>
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="shortcut icon" href="">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+$(function () {
+  $("#y10000").keyup(updateSum);
+  $("#y5000").keyup(updateSum);
+  $("#y1000").keyup(updateSum);
+  $("#y500").keyup(updateSum);
+  $("#y100").keyup(updateSum);
+  $("#y50").keyup(updateSum);
+  $("#y10").keyup(updateSum);
+  $("#y5").keyup(updateSum);
+  $("#y1").keyup(updateSum);
+});
+function updateSum() {
+  var sum = 0;
+  sum += 10000 * $("#y10000").val();
+  sum += 5000 * $("#y5000").val();
+  sum += 1000 * $("#y1000").val();
+  sum += 500 * $("#y500").val();
+  sum += 100 * $("#y100").val();
+  sum += 50 * $("#y50").val();
+  sum += 10 * $("#y10").val();
+  sum += 5 * $("#y5").val();
+  sum += 1 * $("#y1").val();
+  $("#calcResult").text(sum);
+}
+</script>
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-20650968-24', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<h1>現金計数</h1>
+
+<p>
+あなたのお財布の現金が正確に知りたくなったりしたら使ってください。<br>
+私は Zaim で財布の金額が実状とかけ離れてきたらこれでリセットしています。
+</p>
+
+<ul>
+<li><a href="http://zaim.net/" target="_blank">日本最大級！無料の家計簿アプリ・レシート家計簿「Zaim」</a>
+</ul>
+
+<table>
+<thead>
+<tr><th>単位</th><th>枚数</th></tr>
+</thead>
+<tbody>
+<tr><th>10,000</th><td><input type="text" id="y10000" /></td></tr>
+<tr><th>5,000</th><td><input type="text" id="y5000" /></td></tr>
+<tr><th>1,000</th><td><input type="text" id="y1000" /></td></tr>
+<tr><th>500</th><td><input type="text" id="y500" /></td></tr>
+<tr><th>100</th><td><input type="text" id="y100" /></td></tr>
+<tr><th>50</th><td><input type="text" id="y50" /></td></tr>
+<tr><th>10</th><td><input type="text" id="y10" /></td></tr>
+<tr><th>5</th><td><input type="text" id="y5" /></td></tr>
+<tr><th>1</th><td><input type="text" id="y1" /></td></tr>
+<tr><th>合計</th><td id="calcResult"></td></tr>
+</tbody>
+</table>
+
+<!-- SCRIPTS -->
+<!-- Example: <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+</body>
+</html>
+
